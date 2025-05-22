@@ -9,6 +9,7 @@ test("La funzione getInitials restituisce le iniziali di un nome completo.", () 
     expect(iniziali).toBe("CD")
 })
 
+
 //SNACK 2
 function createSlug(stringa) {
     return stringa.toLowerCase()
@@ -21,18 +22,27 @@ test("La funzione createSlug restituisce una stringa in lowercase.", () => {
 
 
 //SNACK 3
-
-function mediaNumeri(array) {
+function average(array) {
     return (array.reduce((acc, curr) => { return acc + curr })) / array.length
 }
 
 test("La funzione average calcola la media aritmetica di un array di numeri.", () => {
-    const media = mediaNumeri([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    const media = average([1, 2, 3, 4, 5, 6, 7, 8, 9])
     expect(media).toBe(5)
 })
 
-//SNACK 4
 
+//SNACK 4
+function createSlug2(string) {
+
+    return string.replaceAll(" ", "-")
+
+}
+
+test("La funzione createSlug sostituisce gli spazi con -.", () => {
+    const stringaTratteggiata = createSlug2("mi piace la crostata")
+    expect(stringaTratteggiata).toBe("mi-piace-la-crostata")
+})
 
 
 //SNACK 5
