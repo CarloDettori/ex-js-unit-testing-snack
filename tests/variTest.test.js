@@ -46,7 +46,14 @@ test("La funzione createSlug sostituisce gli spazi con -.", () => {
 
 
 //SNACK 5
+function isPalindrome(string) {
+    return string.replaceAll(" ", "").split('').reverse().join('');
+}
 
+test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
+    const nomeInvertito = isPalindrome("i topi non avevano nipoti")
+    expect(nomeInvertito.replaceAll(" ", "")).toBe(nomeInvertito)
+})
 
 
 //SNACK 6
