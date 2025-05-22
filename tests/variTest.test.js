@@ -39,7 +39,7 @@ function createSlug2(string) {
 
 }
 
-test("La funzione createSlug sostituisce gli spazi con -.", () => {
+test("La funzione createSlug2 sostituisce gli spazi con -.", () => {
     const stringaTratteggiata = createSlug2("mi piace la crostata")
     expect(stringaTratteggiata).toBe("mi-piace-la-crostata")
 })
@@ -57,11 +57,44 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
 
 
 //SNACK 6
+function createSlug3(title) {
+    if (!title.trim()) {
+        throw new Error("titolo vuoto")
+    }
+}
 
+test("La funzione createSlug3 lancia un errore se il titolo è vuoto o non valido.", () => {
+    expect(() => createSlug3("")).toThrow()
+})
 
 
 //SNACK 7
+let posts = []
 
+beforeEach(() => {
+    posts = [
+        { id: 1, title: "Primo post", slug: "primo-post" },
+        { id: 2, title: "Secondo post", slug: "secondo-post" },
+        { id: 3, title: "Terzo post", slug: "terzo-post" }
+    ]
+})
+
+
+function findPostById(array, id) {
+    if (typeof id !== "number") {
+        throw new Error("l'id non è un numero")
+    } else {
+        return array.find((el) => el.id === id)
+    }
+}
+
+test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id", () => {
+
+    expect(() => findPostById(posts, "s")).toThrow()
+    expect(findPostById(posts, 1)).toEqual({ id: 1, title: "Primo post", slug: "primo-post" })
+    expect(findPostById(posts, 2)).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
+    expect(findPostById(posts, 3)).toEqual({ id: 3, title: "Terzo post", slug: "terzo-post" })
+})
 
 
 //SNACK 8 (BONUS)
