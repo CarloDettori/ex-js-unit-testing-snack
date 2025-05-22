@@ -20,44 +20,41 @@ test("La funzione createSlug restituisce una stringa in lowercase.", () => {
 })
 
 
-//SNACK 2
+//SNACK 3
+
+function mediaNumeri(array) {
+    return (array.reduce((acc, curr) => { return acc + curr })) / array.length
+}
+
+test("La funzione average calcola la media aritmetica di un array di numeri.", () => {
+    const media = mediaNumeri([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expect(media).toBe(5)
+})
+
+//SNACK 4
 
 
 
-//SNACK 2
+//SNACK 5
 
 
 
-//SNACK 2
+//SNACK 6
 
 
 
-//SNACK 2
+//SNACK 7
 
 
 
-//SNACK 2
+//SNACK 8 (BONUS)
 
 
 
-//SNACK 2
+//SNACK 9 (BONUS)
 
 
 
-//SNACK 2
+//SNACK 10 (BONUS)
 
 
-
-//SNACK 2
-
-
-//SNACK 2
-
-
-//SNACK 2
-
-
-//SNACK 2
-
-
-//SNACK 2
